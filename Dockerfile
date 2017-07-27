@@ -1,6 +1,6 @@
 #--------- Generic stuff all our Dockerfiles should start with so we get caching ------------
-FROM tomcat:8.0-jre8
-MAINTAINER Tim Sutton<tim@linfiniti.com>
+FROM tomcat:9.0-jre8
+MAINTAINER Ant Somers<antsomers@gmail.com>
 
 RUN  export DEBIAN_FRONTEND=noninteractive
 ENV  DEBIAN_FRONTEND noninteractive
@@ -16,7 +16,7 @@ RUN apt-get -y update
 
 #-------------Application Specific Stuff ----------------------------------------------------
 
-ENV GS_VERSION 2.9.1
+ENV GS_VERSION 2.11.1
 ENV GEOSERVER_DATA_DIR /opt/geoserver/data_dir
 
 RUN mkdir -p $GEOSERVER_DATA_DIR
